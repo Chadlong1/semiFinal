@@ -46,9 +46,17 @@ public class BoardController {
 		return "redirect:/board";
 	}
 	
-	@GetMapping(path = "/readposting", params = {"boardId"})
+	@GetMapping(path = "/readPosting", params = {"boardId"})
 	public String readPosting(@RequestParam("boardId") int boardId, Model model) {
 		model.addAttribute("contentsByBoardId", boardService.getContentsByBoardId(boardId));
 		return "readPosting";
+	}
+	
+	@GetMapping("/updatePosting")
+	public String updatePosting(@RequestParam("boardId") int boardId, Model model
+			, RedirectAttributes redirectAttr) {
+		
+		model.addAttribute("updatePostingByBoardId", boardService.updateContentsByBoardId(boardId));
+		return "redirect:/board";
 	}
 }

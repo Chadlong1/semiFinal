@@ -30,7 +30,7 @@
 		</tbody>
 	</table>
 			<c:if test="${sessionScope.loginId.equals(contentsByBoardId.userId)}">
-				수정/삭제버튼
+				<a href="../update.jsp?boardId=${contentsByBoardId.boardId}">수정</a>
 			</c:if>
 </body>
 </html>

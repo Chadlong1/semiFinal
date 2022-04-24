@@ -27,7 +27,7 @@
 							<c:when test="${ boardList != null }">
 								<td>${board.boardId}</td>
 								<td>${board.userId}</td>
-								<td><a href="${pageContext.request.contextPath}/board/readposting?boardId=${board.boardId}">${board.title}</a></td>
+								<td><a href="${pageContext.request.contextPath}/board/readPosting?boardId=${board.boardId}">${board.title}</a></td>
 								<%-- <td>${board.contents}</td> --%>
 								<td>${board.boardDate}</td>
 							</c:when>

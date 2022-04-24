@@ -27,6 +27,11 @@ public class BoardService implements IBoardService{
 	public Board getContentsByBoardId(int boardId) {
 		return boardRepository.getContentsByBoardId(boardId);
 	}
+
+	@Override
+	public int updateContentsByBoardId(int boardId) {
+		return boardRepository.updateContentsByBoardId(boardId);
+	}
 	
 	
 	

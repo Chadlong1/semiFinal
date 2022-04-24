@@ -12,4 +12,6 @@ public interface IBoardService {
 		int write(Board board);
 		
 		Board getContentsByBoardId(int boardId);
+		
+		int updateContentsByBoardId(int boardId);
 }

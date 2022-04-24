@@ -49,6 +49,13 @@ public class BoardRepository implements IBoardRepository {
 				, new BeanPropertyRowMapper<Board>(Board.class)
 				, boardId);
 	}
+
+	@Override
+	public int updateContentsByBoardId(int boardId) {
+		return jdbcTemplate.update("UPDATE board SET title = ?, contents = ? WHERE boardId = ?"
+				, new BeanPropertyRowMapper<Board>(Board.class)
+				, boardId);
+	}
 	
 	
 	
