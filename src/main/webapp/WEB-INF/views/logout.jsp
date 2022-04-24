@@ -8,6 +8,6 @@
 </head>
 <body>
 	<h3>로그아웃 되었습니다.</h3>
-	<a href="${pageContext.request.contextPath}/index.jsp">목록으로</a>
+	<a href="${pageContext.request.contextPath}/user">목록으로</a>
 </body>
 </html>

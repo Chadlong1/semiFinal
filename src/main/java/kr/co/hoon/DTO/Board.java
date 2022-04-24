@@ -1,7 +1,7 @@
 package kr.co.hoon.DTO;
 
 public class Board {
-	private String boardId;
+	private int boardId;
 	private String userId;
 	private String title;
 	private String contents;
@@ -11,7 +11,7 @@ public class Board {
 	public Board() {
 	}
 
-	public Board(String boardId, String userId, String title, String contents, String boardDate,
+	public Board(int boardId, String userId, String title, String contents, String boardDate,
 			int boardAvailable) {
 		this.boardId = boardId;
 		this.userId = userId;
@@ -21,11 +21,11 @@ public class Board {
 		this.boardAvailable = boardAvailable;
 	}
 
-	public String getBoardId() {
+	public int getBoardId() {
 		return boardId;
 	}
 
-	public void setBoardId(String boardId) {
+	public void setBoardId(int boardId) {
 		this.boardId = boardId;
 	}
 
