@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import kr.co.hoon.DTO.Board;
@@ -43,5 +44,11 @@ public class BoardController {
 			, RedirectAttributes redirectAttr) {
 		boardService.write(board);
 		return "redirect:/board";
+	}
+	
+	@GetMapping(path = "/readposting", params = {"boardId"})
+	public String readPosting(@RequestParam("boardId") int boardId, Model model) {
+		model.addAttribute("contentsByBoardId", boardService.getContentsByBoardId(boardId));
+		return "readPosting";
 	}
 }

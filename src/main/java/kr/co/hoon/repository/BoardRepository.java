@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
@@ -42,4 +43,13 @@ public class BoardRepository implements IBoardRepository {
 				board.getTitle(), board.getContents(), board.getBoardAvailable());
 	}
 
+	@Override
+	public Board getContentsByBoardId(int boardId) {
+		return jdbcTemplate.queryForObject("SELECT * FROM board WHERE boardId =?"
+				, new BeanPropertyRowMapper<Board>(Board.class)
+				, boardId);
+	}
+	
+	
+	
 }

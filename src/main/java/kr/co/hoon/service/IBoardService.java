@@ -10,4 +10,6 @@ public interface IBoardService {
 		List<Board> getBoardAll();
 		
 		int write(Board board);
+		
+		Board getContentsByBoardId(int boardId);
 }

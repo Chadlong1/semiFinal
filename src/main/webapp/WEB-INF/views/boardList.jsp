@@ -10,33 +10,35 @@
 </head>
 <body>
 	<div>
-	<table>
-		<thead>
-			<tr>
-				<th>방명록</th>
-				<th style="background-color: #eeeeee; text-align: center;">번호</th>
-				<th style="background-color: #eeeeee; text-align: center;">작성자</th>
-				<th style="background-color: #eeeeee; text-align: center;">제목</th>
-				<th style="background-color: #eeeeee; text-align: center;">작성일자</th>
-			</tr>
-		</thead>
-		
-		<tbody>
-		</tbody>
-			
-		<c:choose>
-			<c:when test="${ boardList != null }">
+		<table>
+			<thead>
+				<tr>
+					<th style="background-color: #eeeeee; text-align: center;">번호</th>
+					<th style="background-color: #eeeeee; text-align: center;">작성자</th>
+					<th style="background-color: #eeeeee; text-align: center;">제목</th>
+					<th style="background-color: #eeeeee; text-align: center;">작성일자</th>
+				</tr>
+			</thead>
+
+			<tbody>
 				<c:forEach var="board" items="${boardList}">
-					<li>${board.boardId},${board.userId},${board.title},
-						${board.contents},${board.boardDate}</li>
+					<tr>
+						<c:choose>
+							<c:when test="${ boardList != null }">
+								<td>${board.boardId}</td>
+								<td>${board.userId}</td>
+								<td><a href="${pageContext.request.contextPath}/board/readposting?boardId=${board.boardId}">${board.title}</a></td>
+								<%-- <td>${board.contents}</td> --%>
+								<td>${board.boardDate}</td>
+							</c:when>
+							<c:otherwise>게시글을 작성해주세요</c:otherwise>
+						</c:choose>
+					</tr>
 				</c:forEach>
-			</c:when>
-			<c:otherwise>게시글을 작성해주세요</c:otherwise>
-		</c:choose>
-		
+			</tbody>
+
+		</table>
 		<a href="write.jsp">글쓰기</a>
-	
-	</table>
 	</div>
 </body>
 </html>

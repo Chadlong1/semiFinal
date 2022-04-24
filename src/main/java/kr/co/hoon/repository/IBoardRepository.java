@@ -10,4 +10,6 @@ public interface IBoardRepository {
 		List<Board> getBoardAll();
 		
 		int write(Board board);
+		
+		Board getContentsByBoardId(int boardId);
 }

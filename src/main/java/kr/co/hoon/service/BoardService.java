@@ -22,5 +22,12 @@ public class BoardService implements IBoardService{
 	public int write(Board board) {
 		return boardRepository.write(board);
 	}
+
+	@Override
+	public Board getContentsByBoardId(int boardId) {
+		return boardRepository.getContentsByBoardId(boardId);
+	}
+	
+	
 	
 }
