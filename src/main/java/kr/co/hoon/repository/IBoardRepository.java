@@ -14,4 +14,6 @@ public interface IBoardRepository {
 		Board getContentsByBoardId(int boardId);
 		
 		int updateContentsByBoardId(int boardId);
+		
+		int deleteContentsByBoardId(int boardId);
 }

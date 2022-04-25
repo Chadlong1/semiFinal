@@ -32,7 +32,9 @@ public class BoardService implements IBoardService{
 	public int updateContentsByBoardId(int boardId) {
 		return boardRepository.updateContentsByBoardId(boardId);
 	}
-	
-	
-	
+
+	@Override
+	public int deleteContentsByBoardId(int boardId) {
+		return boardRepository.deleteContentsByBoardId(boardId);
+	}
 }

@@ -18,19 +18,23 @@
 
 		<tbody>
 			<tr>
-				<td colspan="2" style="min-height: 200px; background-color: #eeeee; text-align: left;">${contentsByBoardId.userId}</td>
+				<td colspan="2"
+					style="min-height: 200px; background-color: #eeeee; text-align: left;">${contentsByBoardId.userId}</td>
 			</tr>
 			<tr>
-				<td colspan="2" style="min-height: 200px; background-color: #eeeee; text-align: left;">${contentsByBoardId.boardDate}</td>
+				<td colspan="2"
+					style="min-height: 200px; background-color: #eeeee; text-align: left;">${contentsByBoardId.boardDate}</td>
 			</tr>
 			<tr>
-				<td colspan="2" style="min-height: 200px; background-color: #eeeee; text-align: left;">${contentsByBoardId.contents}</td>
+				<td colspan="2"
+					style="min-height: 200px; background-color: #eeeee; text-align: left;">${contentsByBoardId.contents}</td>
 			</tr>
-			
+
 		</tbody>
 	</table>
-			<c:if test="${sessionScope.loginId.equals(contentsByBoardId.userId)}">
-				<a href="../update.jsp?boardId=${contentsByBoardId.boardId}">수정</a>
-			</c:if>
+	<c:if test="${sessionScope.loginId.equals(contentsByBoardId.userId)}">
+		<a href="../update.jsp?boardId=${contentsByBoardId.boardId}">수정</a>
+		<a href="${pageContext.request.contextPath}/board/deletePosting">삭제</a>
+	</c:if>
 </body>
 </html>

@@ -52,11 +52,19 @@ public class BoardController {
 		return "readPosting";
 	}
 	
-	@GetMapping("/updatePosting")
+	@PostMapping("/updatePosting")
 	public String updatePosting(@RequestParam("boardId") int boardId, Model model
 			, RedirectAttributes redirectAttr) {
 		
 		model.addAttribute("updatePostingByBoardId", boardService.updateContentsByBoardId(boardId));
+		return "redirect:/board";
+	}
+	
+	@GetMapping("/deletePosting")
+	public String deletePosting(@RequestParam("boardId") int boardId
+			, RedirectAttributes redirectAttr) {
+		boardService.deleteContentsByBoardId(boardId);
+		
 		return "redirect:/board";
 	}
 }

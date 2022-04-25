@@ -9,7 +9,7 @@
 <body>
 	<div>
 		<form
-			action="${ pageContext.request.contextPath }/board/updatePosting?boardId=${boardId}">
+			action="${ pageContext.request.contextPath }/board/updatePosting?boardId=${param.boardId}" method="post">
 			<table>
 				<thead>
 					<tr>

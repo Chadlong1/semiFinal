@@ -25,11 +25,14 @@
 					<tr>
 						<c:choose>
 							<c:when test="${ boardList != null }">
-								<td>${board.boardId}</td>
-								<td>${board.userId}</td>
-								<td><a href="${pageContext.request.contextPath}/board/readPosting?boardId=${board.boardId}">${board.title}</a></td>
-								<%-- <td>${board.contents}</td> --%>
-								<td>${board.boardDate}</td>
+								<c:if test="${board.boardAvailable == 1}">
+									<td>${board.boardId}</td>
+									<td>${board.userId}</td>
+									<td><a
+										href="${pageContext.request.contextPath}/board/readPosting?boardId=${board.boardId}">${board.title}</a></td>
+									<%-- <td>${board.contents}</td> --%>
+									<td>${board.boardDate}</td>
+								</c:if>
 							</c:when>
 							<c:otherwise>게시글을 작성해주세요</c:otherwise>
 						</c:choose>
