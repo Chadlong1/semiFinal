@@ -13,7 +13,7 @@ public interface IBoardRepository {
 		
 		Board getContentsByBoardId(int boardId);
 		
-		int updateContentsByBoardId(int boardId);
+		int updateContentsByBoardId(Board board);
 		
 		int deleteContentsByBoardId(int boardId);
 }

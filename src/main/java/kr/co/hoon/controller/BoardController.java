@@ -53,10 +53,10 @@ public class BoardController {
 	}
 	
 	@PostMapping("/updatePosting")
-	public String updatePosting(@RequestParam("boardId") int boardId, Model model
+	public String updatePosting(@ModelAttribute(name = "defaultBoard") Board board, Model model
 			, RedirectAttributes redirectAttr) {
 		
-		model.addAttribute("updatePostingByBoardId", boardService.updateContentsByBoardId(boardId));
+		model.addAttribute("updatePostingByBoardId", boardService.updateContentsByBoardId(board));
 		return "redirect:/board";
 	}
 	

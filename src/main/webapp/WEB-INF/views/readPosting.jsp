@@ -34,7 +34,7 @@
 	</table>
 	<c:if test="${sessionScope.loginId.equals(contentsByBoardId.userId)}">
 		<a href="../update.jsp?boardId=${contentsByBoardId.boardId}">수정</a>
-		<a href="${pageContext.request.contextPath}/board/deletePosting">삭제</a>
+		<a href="${pageContext.request.contextPath}/board/deletePosting?boardId=${contentsByBoardId.boardId}">삭제</a>
 	</c:if>
 </body>
 </html>
