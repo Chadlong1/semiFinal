@@ -6,26 +6,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/bootstrap.css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/custom.css">
 <title>메인</title>
 </head>
 <body>
-	<c:choose>
-		<c:when test="${ joinResult == 1 }">회원 등록 완료</c:when>
-	</c:choose>
-
-
-
-	<a href="join.jsp">회원 가입</a>
-	<c:if test="${ empty loginId }">
-		<a href="login.jsp">로그인</a>
-	</c:if>
-	<c:if test="${ not empty loginId }">
-		<a href="${pageContext.request.contextPath}/user/list">회원 목록 보기</a>
-		<h3>${sessionScope.loginId}회원님 환영합니다.</h3>
-		<br>
-		<a href="${pageContext.request.contextPath}/user/logout">로그아웃</a>
-		<br>
-		<a href="${pageContext.request.contextPath}/board">게시판</a>
-	</c:if>
+	<script>
+		location.href = 'main.jsp';
+	</script>
 </body>
 </html>
