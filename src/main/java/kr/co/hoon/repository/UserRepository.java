@@ -37,7 +37,7 @@ public class UserRepository implements IUserRepository{
 	}
 
 	@Override
-	public int add(User user) {
+	public int join(User user) {
 		return jdbcTemplate.update("INSERT INTO user VALUES (?, ?, ?, ?, ?, ?)"
 				, user.getId()
 				, user.getPassword()

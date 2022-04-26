@@ -7,7 +7,7 @@ import kr.co.hoon.DTO.User;
 public interface IUserRepository {
 	List<User> getUserAll();
 	
-	int add(User user);
+	int join(User user);
 	
 	User login(String id);
 }

@@ -19,8 +19,13 @@ public class UserService implements IUserService{
 	}
 	
 	@Override
-	public int add(User user) {
-		return userRepository.add(user);
+	public int join(User user) {
+		int result = userRepository.join(user);
+		if (result == 1) {
+			return 1;
+		} else {
+			return 0;
+		}
 	}
 
 	@Override

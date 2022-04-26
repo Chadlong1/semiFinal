@@ -45,9 +45,12 @@ public class UserController {
 	}
 	
 	@PostMapping("/join")
-	public String join(@ModelAttribute(name = "defaultUser") User user, Model model
+	public String join(@ModelAttribute(name = "defaultUser") User user, HttpSession session, Model model
 			, RedirectAttributes redirectAttr) {
-		int result = userService.add(user);
+		int result = userService.join(user);
+		if (result == 1) {
+			session.setAttribute("loginId", user.getId());
+		}
 		redirectAttr.addFlashAttribute("joinResult" , result); 
 		return "redirect:/user";
 	}
@@ -72,7 +75,7 @@ public class UserController {
 	@GetMapping("/logout")
 	public String logout(HttpSession session) {
 		session.invalidate();
-		return "logout";
+		return "redirect:/user";
 	}
 	
 }

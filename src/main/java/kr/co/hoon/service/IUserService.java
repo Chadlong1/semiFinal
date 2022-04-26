@@ -8,7 +8,7 @@ public interface IUserService {
 	// User
 	List<User> getUserAll();
 	
-	int add(User user);
+	int join(User user);
 	
 	User login(String id);
 	

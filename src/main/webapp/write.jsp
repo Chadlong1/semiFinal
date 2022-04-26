@@ -34,13 +34,8 @@
 			<c:choose>
 				<c:when test="${ empty loginId }">
 					<ul class="nav navbar-nav navbar-right">
-						<li class="dropdown"><a href="#" class="dropdown-toggle"
-							data-toggle="dropdown" role="button" aria-haspopup="true"
-							aria-expanded="false">접속하기<span class="caret"></span></a>
-							<ul class="dropdown-menu">
-								<li><a href="login.jsp">로그인</a></li>
-								<li><a href="join.jsp">회원가입</a></li>
-							</ul></li>
+						<li><a class="dropdown-item" href="login.jsp">로그인</a></li>
+						<li><a class="dropdown-item" href="join.jsp">회원가입</a></li>
 					</ul>
 				</c:when>
 				<c:otherwise>
@@ -49,7 +44,7 @@
 							data-toggle="dropdown" role="button" aria-haspopup="true"
 							aria-expanded="false">회원관리<span class="caret"></span></a>
 							<ul class="dropdown-menu">
-								<li><a href="logoutAction.jsp">로그아웃</a></li>
+								<li><a href="${pageContext.request.contextPath}/user/logout">로그아웃</a></li>
 							</ul></li>
 					</ul>
 
@@ -62,20 +57,21 @@
 		<div class="row">
 			<form action="${ pageContext.request.contextPath }/board/write"
 				method="post">
-				<table class="table table-striped" style="text-align; center; border: 1px solid #dddddd">
+				<table class="table table-striped" style="border: 1px solid #dddddd">
 					<thead>
 						<tr>
-							<th colspan="2" style="background-color: #eeeeee; text-align: center;">방명록</th>
+							<th colspan="2"
+								style="background-color: #eeeeee; text-align: center;">방명록</th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
-							<td><input type="text" class="form-control" placeholder="글 제목" name="title"
-								maxlength="50"></td>
+							<td><input type="text" class="form-control"
+								placeholder="글 제목" name="title" maxlength="50"></td>
 						</tr>
 						<tr>
-							<td><textarea class="form-control" placeholder="글 내용" name="contents"
-									maxlength="2048" style="height: 350px"></textarea></td>
+							<td><textarea class="form-control" placeholder="글 내용"
+									name="contents" maxlength="2048" style="height: 350px"></textarea></td>
 						</tr>
 					</tbody>
 				</table>
